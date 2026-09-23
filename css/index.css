@@ -1,0 +1,12 @@
+:root { --ink: #1f302c; --cream: #f3efe5; --coral: #d9654d; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: "DM Sans", sans-serif; background: var(--cream); }
+.welcome-page { min-height: 100vh; padding: 34px 6vw 30px; display: flex; flex-direction: column; background: linear-gradient(90deg, rgba(243,239,229,.9), rgba(243,239,229,.08)), url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1800&q=85") center/cover; }
+.welcome-nav, .welcome-foot { display: flex; align-items: center; justify-content: space-between; }
+.wordmark { color: inherit; text-decoration: none; font-weight: 700; letter-spacing: .1em; font-size: .95rem; }.wordmark span { font-weight: 400; }
+.nav-login { color: var(--ink); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 5px; }.nav-login span, .primary-button span { margin-left: 14px; }
+.welcome-copy { margin: auto 0; max-width: 590px; padding: 9vh 0; }.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .68rem; font-weight: 700; margin: 0 0 20px; color: var(--coral); }
+h1 { font-family: "Playfair Display", serif; font-size: clamp(3.5rem, 8vw, 7.5rem); line-height: .92; letter-spacing: -.045em; margin: 0; }.welcome-copy h1 em { color: var(--coral); font-weight: 600; }.intro { max-width: 370px; line-height: 1.7; margin: 30px 0; color: #52615a; }
+.primary-button { display: inline-flex; align-items: center; background: var(--ink); color: white; text-decoration: none; padding: 16px 20px; font-weight: 700; font-size: .86rem; transition: transform .2s, background .2s; }.primary-button:hover { transform: translateY(-3px); background: var(--coral); }
+.welcome-foot { justify-content: flex-start; gap: 14px; font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; }.line { width: 60px; height: 1px; background: var(--coral); }
+@media (max-width: 650px) { .welcome-page { padding: 25px; background-position: 64% center; }.welcome-copy { padding: 6vh 0; }.welcome-foot { font-size: .58rem; } }

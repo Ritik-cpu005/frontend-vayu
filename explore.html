@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore India | Vayu Brahman</title>
+    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="service-top">
+        <a class="wordmark" href="home.html">VAYU <span>BRAHMAN</span></a>
+        <a class="back-link" href="home.html">← Back to home</a>
+    </header>
+
+    <main class="service-main explore-main">
+        <section class="service-intro">
+            <p class="eyebrow">A little further</p>
+            <h1>Find your<br><em>kind of India.</em></h1>
+            <p>Start with a country, follow it to a state and city, then choose the place that feels like your next story.</p>
+        </section>
+
+        <section class="destination-planner" aria-labelledby="planner-title">
+            <div class="planner-heading">
+                <div>
+                    <p class="eyebrow">Build your map</p>
+                    <h2 id="planner-title">Where should we take you?</h2>
+                </div>
+                <span class="step-count">01 / 05</span>
+            </div>
+            <div class="selector-grid">
+                <label class="selector-field"><span>01 · Country</span><select id="country-select"><option value="India">India</option></select></label>
+                <label class="selector-field"><span>02 · State</span><select id="state-select" disabled><option value="">Choose a state</option></select></label>
+                <label class="selector-field"><span>03 · District</span><select id="district-select" disabled><option value="">Choose a district</option></select></label>
+                <label class="selector-field"><span>04 · City</span><select id="city-select" disabled><option value="">Choose a city</option></select></label>
+                <label class="selector-field"><span>05 · Place</span><select id="place-select" disabled><option value="">Choose a place</option></select></label>
+            </div>
+        </section>
+
+        <section class="map-section" aria-labelledby="map-title">
+            <div class="map-copy">
+                <div class="map-heading"><p class="eyebrow">Live destination view</p><h2 id="map-title">Your place, in context.</h2></div>
+                <div class="place-summary" id="place-summary"><span class="summary-kicker">Start by choosing a place</span><h3>India is waiting.</h3><p>Use the five selectors above to see a destination and how long it takes to reach it from the city centre.</p></div>
+                <div class="travel-time" id="travel-time" hidden><span>Estimated from city centre</span><strong id="time-value">—</strong><small id="distance-value">—</small></div>
+                <a class="save-place" id="save-place" href="#" hidden>Save this place to My Trip ↗</a>
+            </div>
+            <div class="map-wrap"><div id="india-map" aria-label="Map showing the selected Indian destination"></div><div class="map-label"><span class="map-dot"></span><span id="map-label-text">India</span></div></div>
+        </section>
+
+        <section class="image-explorer" aria-labelledby="image-explorer-title">
+            <div class="image-explorer-heading">
+                <div><p class="eyebrow">Explore by images</p><h2 id="image-explorer-title">See what is waiting there.</h2></div>
+                <label class="image-search"><span>Search places</span><input id="place-search" type="search" placeholder="Try fort, lake, market..."></label>
+            </div>
+            <p class="image-context" id="image-context">100 handpicked places across India. Search or choose a state to narrow the gallery.</p>
+            <div class="image-grid" id="image-grid"></div>
+        </section>
+
+        <dialog class="place-dialog" id="place-dialog">
+            <button class="dialog-close" id="dialog-close" type="button" aria-label="Close place details">×</button>
+            <div class="dialog-image" id="dialog-image"></div>
+            <div class="dialog-content"><p class="eyebrow" id="dialog-location">Destination details</p><h2 id="dialog-title">Place name</h2><div class="detail-columns"><div><span>History</span><p id="dialog-history"></p></div><div><span>Best time to visit</span><p id="dialog-season"></p></div></div><button class="action-button" id="make-trip" type="button">Make My Trip ↗</button><p class="dialog-status" id="dialog-status"></p></div>
+        </dialog>
+
+        <section class="explore-categories" aria-label="Explore by interest">
+            <a href="book-travel.html"><strong>Coastlines</strong><span>Sea air and slow mornings ↗</span></a>
+            <a href="tour-guide.html"><strong>Heritage</strong><span>Old stones, living stories ↗</span></a>
+            <a href="stay-food.html"><strong>Wild places</strong><span>Room to breathe ↗</span></a>
+        </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/explore.js" defer></script>
+</body>
+</html>

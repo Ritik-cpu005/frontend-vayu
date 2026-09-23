@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/index.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/index.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/login.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/login.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/newuser.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/newuser.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/nm.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/nm.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/home.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/home.html"
+        },
+        {
+            "type": "msedge",
+            "name": "http://127.0.0.1:3000/explore.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/explore.html"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip | Vayu Brahman</title>
+    <link rel="stylesheet" href="css/my-trip.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="service-top">
+        <a class="wordmark" href="home.html">VAYU <span>BRAHMAN</span></a>
+        <nav class="trip-nav"><a href="home.html">Home</a><a class="active" href="my-trip.html">My Trip</a><a class="sos-link" href="sos.html">SOS</a></nav>
+    </header>
+    <main class="trip-main">
+        <section class="trip-intro">
+            <p class="eyebrow">Your itinerary</p>
+            <h1>MY<br><em>TRIP</em></h1>
+            <p>Keep every moving part of your journey together, from the first ticket to the last meal.</p>
+        </section>
+
+        <section class="destination-banner">
+            <div><span class="label">📍 Destination</span><h2 id="destination-title">Kerala, slowly</h2><p id="destination-detail">7 days · Coast &amp; culture</p></div>
+            <a href="explore.html">Change destination ↗</a>
+        </section>
+        <section class="festival-trip" id="festival-trip" hidden><p class="eyebrow">🎉 My Festival Trip</p><h2 id="festival-trip-title">Festival itinerary</h2><p id="festival-trip-detail"></p><div class="festival-steps" id="festival-steps"></div></section>
+
+        <section class="trip-section" aria-labelledby="travel-title">
+            <div class="section-heading"><div><p class="eyebrow">Get there</p><h2 id="travel-title">Travel</h2></div><span class="section-note">Choose one</span></div>
+            <div class="travel-options">
+                <button class="travel-option" data-mode="Flight" data-cost="8500" type="button"><span class="option-icon">✈</span><strong>Flight</strong><small>From ₹8,500</small></button>
+                <button class="travel-option" data-mode="Train" data-cost="1800" type="button"><span class="option-icon">🚆</span><strong>Train</strong><small>From ₹1,800</small></button>
+                <button class="travel-option" data-mode="Cab" data-cost="3200" type="button"><span class="option-icon">🚕</span><strong>Cab</strong><small>From ₹3,200</small></button>
+                <a class="travel-option ferry-option" href="https://feryrides.co.in/" target="_blank" rel="noopener"><span class="option-icon">⛴</span><strong>Ferry</strong><small>Book on Ferry Rides ↗</small></a>
+            </div>
+        </section>
+
+        <section class="trip-section" aria-labelledby="stay-title">
+            <div class="section-heading"><div><p class="eyebrow">Shape the stay</p><h2 id="stay-title">Stay &amp; experiences</h2></div></div>
+            <div class="booking-grid">
+                <a class="booking-item" href="stay-food.html"><span class="booking-icon">🏨</span><span><strong>Hotel</strong><small>Choose a place to rest</small></span><b>↗</b></a>
+                <a class="booking-item" href="tour-guide.html"><span class="booking-icon">🧑‍🏫</span><span><strong>Guide</strong><small>Meet a local expert</small></span><b>↗</b></a>
+                <a class="booking-item" href="events.html"><span class="booking-icon">🎉</span><span><strong>Event</strong><small>Add a moment worth travelling for</small></span><b>↗</b></a>
+                <a class="booking-item" href="stay-food.html"><span class="booking-icon">🍔</span><span><strong>Food</strong><small>Find a local table</small></span><b>↗</b></a>
+            </div>
+        </section>
+
+        <section class="trip-summary" aria-labelledby="summary-title">
+            <div class="summary-main"><p class="eyebrow">Your trip summary</p><h2 id="summary-title">Ready when you are.</h2><div class="date-fields"><label>📅 Start date<input id="start-date" type="date"></label><label>📅 End date<input id="end-date" type="date"></label></div></div>
+            <div class="summary-details"><div><span>💰 Total Cost</span><strong id="total-cost">₹0</strong></div><div><span>🎫 Booking IDs</span><strong id="booking-ids">VB-TRIP-001</strong></div><button id="save-itinerary" type="button">Save itinerary ↗</button><p class="save-status" id="save-status"></p></div>
+        </section>
+    </main>
+    <a class="sos-button" href="sos.html"><span>+</span><strong>SOS</strong><small>Need help?</small></a>
+    <script src="js/my-trip.js" defer></script>
+</body>
+</html>

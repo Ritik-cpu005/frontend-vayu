@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vayu Brahman | Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <div class="signup-card">
+        <h1 style="text-align: center;" class="brand">VAYU BRAHMAN</h1>
+        <h2 style="text-align: center;" class="tagline">Start Your Journey Here</h2>
+
+        <form method="POST" action="/create-account" onsubmit="return createAccount();">
+            <!-- onsubmit="return createAccount();" connects it to the JavaScript function
+             if this tag is not present user can submit the form without validation -->
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input id="fullname" type="text" placeholder="Enter your full name">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Choose a username">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Create a password">
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" type="password" placeholder="Re-enter password">
+            </div>
+
+            <button type="submit" class="button">Create Account</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="login.html">Log In</a>
+        </div>
+    </div>
+</body>
+</html>
