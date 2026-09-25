@@ -17,15 +17,15 @@
         </section>
         <section class="auth-form">
         <h2>Log in</h2>
-        <form onsubmit="return validateForm();">
+        <form method="post" target="_self" onsubmit="return validateForm();">
             <div class="input-group">
                 <label for="username">Username</label>
-                <input id="username" type="text" placeholder="Enter your username">
+                <input id="username" type="text" placeholder="Enter your username" required autocomplete="username">
             </div>
 
             <div class="input-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Enter password">
+                <input id="password" type="password" placeholder="Enter password" required autocomplete="current-password">
             </div>
 
             

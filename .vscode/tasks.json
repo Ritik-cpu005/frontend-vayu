@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Vayu website",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "manage.py",
+                "runserver",
+                "127.0.0.1:8000"
+            ],
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ".*"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": "Starting development server at http://127\\.0\\.0\\.1:8000/"
+                }
+            },
+            "presentation": {
+                "reveal": "never",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

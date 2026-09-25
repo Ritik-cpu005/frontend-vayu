@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
+from django.views.static import serve
+from django.urls import re_path
 
 from vayu_backend.views import (
     confirm_password_reset, create_emergency_incident, customer_care, login_user,
@@ -36,6 +38,16 @@ urlpatterns = [
     path('api/auth/reset-password/', confirm_password_reset, name='confirm-password-reset'),
     path('api/customer-care/', customer_care, name='customer-care'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        path('', serve, {'document_root': settings.BASE_DIR, 'path': 'index.html'}),
+        re_path(
+            r'^(?P<path>(?:css|js)/.+|[^/]+\.html|logo\.jpeg)$',
+            serve,
+            {'document_root': settings.BASE_DIR},
+        ),
+    ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

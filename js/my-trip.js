@@ -1,10 +1,22 @@
 const savedRoute = JSON.parse(localStorage.getItem("vayuRoute") || "null");
-if (savedRoute) { document.getElementById("route-title").textContent = `${savedRoute.from} to ${savedRoute.to}`; document.getElementById("route-detail").textContent = "Your saved route · Ready when you are"; }
-
-const savedRoute = JSON.parse(localStorage.getItem("vayuRoute") || "null");
 const bookedTour = JSON.parse(localStorage.getItem("vayuBookedTour") || "null");
 const savedItinerary = JSON.parse(localStorage.getItem("vayuItinerary") || "null");
 const festivalTrip = JSON.parse(localStorage.getItem("vayuFestivalTrip") || "null");
+
+const profileUsername = localStorage.getItem("vayuLoggedInUser") || "";
+const tripProfilePhoto = document.getElementById("trip-profile-photo");
+const tripProfileInitials = document.getElementById("trip-profile-initials");
+tripProfileInitials.textContent = profileUsername.charAt(0).toUpperCase() || "V";
+const savedProfilePhoto = localStorage.getItem(`vayuProfilePhoto:${profileUsername || "guest"}`);
+if (savedProfilePhoto) {
+	tripProfilePhoto.src = savedProfilePhoto;
+	tripProfilePhoto.hidden = false;
+	tripProfileInitials.hidden = true;
+}
+tripProfilePhoto.addEventListener("error", () => {
+	tripProfilePhoto.hidden = true;
+	tripProfileInitials.hidden = false;
+});
 
 const destinationTitle = document.getElementById("destination-title");
 const destinationDetail = document.getElementById("destination-detail");
@@ -40,6 +52,7 @@ document.querySelectorAll(".travel-option[data-mode]").forEach((option) => {
 		option.classList.add("selected");
 		selectedTravelCost = Number(option.dataset.cost);
 		updateTotal();
+		if (option.dataset.bookingUrl) window.location.assign(option.dataset.bookingUrl);
 	});
 });
 
@@ -69,11 +82,3 @@ document.getElementById("save-itinerary").addEventListener("click", () => {
 	bookingIds.textContent = ids.join(" · ");
 	saveStatus.textContent = "Itinerary saved successfully.";
 });
-const bookedTour = JSON.parse(localStorage.getItem("vayuBookedTour") || "null");
-if (bookedTour) {
-	const card = document.getElementById("booked-tour-card");
-	card.classList.remove("empty-trip");
-	card.querySelector("span").textContent = `02 · ${bookedTour.state}`;
-	document.getElementById("booked-tour-title").textContent = bookedTour.place;
-	document.getElementById("booked-tour-detail").textContent = `${bookedTour.city}, ${bookedTour.district} · ${bookedTour.duration}`;
-}

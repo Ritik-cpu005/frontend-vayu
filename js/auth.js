@@ -1,5 +1,11 @@
 async function postJson(url, payload) {
-    const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "same-origin", body: JSON.stringify(payload) });
+    const apiOrigin = window.location.port === "8000" ? "" : "http://127.0.0.1:8000";
+    let response;
+    try {
+        response = await fetch(`${apiOrigin}${url}`, { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "include", body: JSON.stringify(payload) });
+    } catch (error) {
+        throw new Error("Could not connect to the login server. Start Django with: python manage.py runserver");
+    }
     const contentType = response.headers.get("content-type") || "";
     const data = contentType.includes("application/json") ? await response.json() : { error: `Server returned ${response.status} ${response.statusText}.` };
     if (!response.ok) throw new Error(data.error || "Request failed.");
@@ -7,6 +13,8 @@ async function postJson(url, payload) {
 }
 
 function validateForm() {
+    const form = document.querySelector("form");
+    if (!form.reportValidity()) return false;
     loginUser();
     return false;
 }
