@@ -1,4 +1,23 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+
+class UserProfile(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+	first_name = models.CharField(max_length=100, blank=True)
+	middle_name = models.CharField(max_length=100, blank=True)
+	last_name = models.CharField(max_length=100, blank=True)
+	phone = models.CharField(max_length=30, blank=True)
+	age = models.PositiveSmallIntegerField(null=True, blank=True)
+	gender = models.CharField(max_length=30, blank=True)
+	country = models.CharField(max_length=100, blank=True)
+	emergency_one = models.CharField(max_length=255, blank=True)
+	emergency_two = models.CharField(max_length=255, blank=True)
+	reset_code = models.CharField(max_length=6, blank=True)
+	reset_code_expires = models.DateTimeField(null=True, blank=True)
+
+	def __str__(self):
+		return f"Profile for {self.user.username} (user id {self.user_id})"
 
 
 class EmergencyIncident(models.Model):

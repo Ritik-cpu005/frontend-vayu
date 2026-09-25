@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care | Vayu Brahman</title>
+    <link rel="stylesheet" href="css/customer-care.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script src="js/customer-care.js" defer></script>
+</head>
+<body>
+    <header class="topbar"><a class="wordmark" href="home.html">VAYU <span>BRAHMAN</span></a><a class="back-link" href="home.html">Back to home ↗</a></header>
+    <main class="care-main">
+        <section class="care-intro"><p class="eyebrow">We are listening</p><h1>How can we<br><em>help?</em></h1><p>Send a message to the Vayu Brahman team. Your request goes directly to customer care.</p></section>
+        <form id="customer-care-form" class="care-form">
+            <label>Name<input id="care-name" required placeholder="Your name"></label>
+            <label>Email<input id="care-email" type="email" required placeholder="Where can we reply?"></label>
+            <label>Message<textarea id="care-message" rows="6" required placeholder="Tell us what you need help with"></textarea></label>
+            <button class="button" type="submit">Send to customer care ↗</button>
+            <p id="care-status" role="status"></p>
+        </form>
+    </main>
+</body>
+</html>

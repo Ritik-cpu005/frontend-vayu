@@ -1,1 +1,321 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tour Guide | Vayu Brahman</title><link rel="stylesheet" href="css/tour-guide.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></head><body><header class="service-top"><a class="wordmark" href="home.html">VAYU <span>BRAHMAN</span></a><nav class="guide-nav"><a href="home.html">Home</a><a href="my-trip.html">My Trip</a><a href="profile.html">Profile</a></nav></header><main class="service-main guide-main"><section class="service-intro"><p class="eyebrow">Local eyes, open roads</p><h1>Go deeper<br><em>with a local.</em></h1><p>Choose a personal guide by destination, language, experience and availability.</p></section><section class="guide-controls"><label>Destination<input id="guide-destination" placeholder="Try Jaipur, Kerala..."></label><label>Available date<input id="guide-date" type="date"></label></section><section class="guide-list" id="guide-list"></section><p class="status-message" id="guide-message"></p></main><script src="js/tour-guide.js" defer></script></body></html>
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tour Guide Booking | Vayu Brahman</title>
+
+    <link rel="stylesheet" href="css/tour-guide.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="service-top">
+
+        <a class="wordmark" href="home.html">
+            VAYU <span>BRAHMAN</span>
+        </a>
+
+        <nav class="guide-nav">
+            <a href="home.html">Home</a>
+            <a href="my-trip.html">My Trip</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+
+    </header>
+
+
+    <main class="service-main guide-main">
+
+        <!-- INTRO -->
+        <section class="service-intro">
+
+            <p class="eyebrow">PERSONAL TOUR GUIDE</p>
+
+            <h1>
+                Explore India<br>
+                <em>with a local.</em>
+            </h1>
+
+            <p>
+                Book a verified local guide based on destination,
+                gender preference, language, skills and availability.
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH / FILTER -->
+        <section class="booking-card">
+
+            <div class="section-title">
+                <span>01</span>
+                <div>
+                    <h2>Plan your guide</h2>
+                    <p>Tell us what kind of guide you need.</p>
+                </div>
+            </div>
+
+
+            <div class="form-grid">
+
+                <!-- Destination -->
+                <label>
+                    Destination
+                    <input
+                        type="text"
+                        id="guide-destination"
+                        placeholder="Example: Jaipur, Goa, Kerala"
+                    >
+                </label>
+
+
+                <!-- Date -->
+                <label>
+                    Travel date
+                    <input
+                        type="date"
+                        id="guide-date"
+                    >
+                </label>
+
+
+                <!-- Guide Gender -->
+                <label>
+                    Guide preference
+
+                    <select id="guide-gender">
+
+                        <option value="Any">
+                            Any
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                    </select>
+                </label>
+
+
+                <!-- Number of tourists -->
+                <label>
+                    Number of tourists
+
+                    <select id="tourists">
+
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6 People</option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Language -->
+                <label>
+                    Preferred language
+
+                    <select id="guide-language">
+
+                        <option value="Any">
+                            Any Language
+                        </option>
+
+                        <option value="English">
+                            English
+                        </option>
+
+                        <option value="Hindi">
+                            Hindi
+                        </option>
+
+                        <option value="Marathi">
+                            Marathi
+                        </option>
+
+                        <option value="Gujarati">
+                            Gujarati
+                        </option>
+
+                        <option value="Tamil">
+                            Tamil
+                        </option>
+
+                        <option value="Bengali">
+                            Bengali
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Hours -->
+                <label>
+                    Guide duration
+
+                    <select id="guide-hours">
+
+                        <option value="2">2 Hours</option>
+                        <option value="4" selected>4 Hours</option>
+                        <option value="6">6 Hours</option>
+                        <option value="8">Full Day (8 Hours)</option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+
+            <!-- Skills -->
+            <div class="skills-section">
+
+                <h3>What should your guide be good at?</h3>
+
+                <p>
+                    Select the skills you need for your trip.
+                </p>
+
+
+                <div class="skills-grid">
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="History">
+                        <span>🏛️</span>
+                        History
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Food">
+                        <span>🍛</span>
+                        Food & Cuisine
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Photography">
+                        <span>📸</span>
+                        Photography
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Shopping">
+                        <span>🛍️</span>
+                        Shopping
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Adventure">
+                        <span>🏔️</span>
+                        Adventure
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Culture">
+                        <span>🎭</span>
+                        Culture
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Architecture">
+                        <span>🏰</span>
+                        Architecture
+                    </label>
+
+                    <label class="skill-option">
+                        <input type="checkbox" value="Family">
+                        <span>👨‍👩‍👧</span>
+                        Family Tours
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="search-btn"
+                id="find-guides">
+
+                Find Available Guides →
+
+            </button>
+
+        </section>
+
+
+        <!-- GUIDE RESULTS -->
+        <section class="results-section">
+
+            <div class="section-title">
+
+                <span>02</span>
+
+                <div>
+                    <h2>Available guides</h2>
+                    <p>Choose the person who fits your trip.</p>
+                </div>
+
+            </div>
+
+
+            <div
+                class="guide-list"
+                id="guide-list">
+
+                <div class="empty-guides">
+
+                    <div>🧭</div>
+
+                    <h3>Find your local guide</h3>
+
+                    <p>
+                        Enter your destination and travel date
+                        to see available guides.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOOKING SUMMARY -->
+        <section
+            class="booking-summary"
+            id="booking-summary"
+            style="display:none;">
+
+            <div class="section-title">
+
+                <span>03</span
+```
+
+                <div>
+                    <h2>Booking summary</h2>
+                    <p>Review your guide and trip details.</p>
+                </div>
+
+            </div>

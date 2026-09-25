@@ -19,12 +19,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
-from vayu_backend.views import create_emergency_incident, upload_incident_recording
+from vayu_backend.views import (
+    confirm_password_reset, create_emergency_incident, customer_care, login_user,
+    register_user, request_password_reset, upload_incident_recording,
+    user_profile,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/emergency/incidents/', create_emergency_incident, name='create-emergency-incident'),
     path('api/emergency/incidents/<str:incident_id>/recording/', upload_incident_recording, name='upload-incident-recording'),
+    path('api/auth/register/', register_user, name='register-user'),
+    path('api/auth/login/', login_user, name='login-user'),
+    path('api/auth/profile/', user_profile, name='user-profile'),
+    path('api/auth/forgot-password/', request_password_reset, name='request-password-reset'),
+    path('api/auth/reset-password/', confirm_password_reset, name='confirm-password-reset'),
+    path('api/customer-care/', customer_care, name='customer-care'),
 ]
 
 if settings.DEBUG:

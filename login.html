@@ -8,11 +8,15 @@
     <script src="js/auth.js" defer></script>
 </head>
 <body>
-    <div class="login-box">
-        <h1 style="text-align: center;">VAYU BRAHMAN</h1>
-
-    <h2 style="text-align: center;">START YOUR JOURNEY HERE </h2>
-        
+    <main class="auth-shell">
+        <section class="auth-intro">
+            <a class="wordmark" href="index.html">VAYU <span>BRAHMAN</span></a>
+            <p class="eyebrow">Welcome back</p>
+            <h1>Your journey,<br><em>your way.</em></h1>
+            <p>Sign in to keep your trips, profile, and travel plans together.</p>
+        </section>
+        <section class="auth-form">
+        <h2>Log in</h2>
         <form onsubmit="return validateForm();">
             <div class="input-group">
                 <label for="username">Username</label>
@@ -28,10 +32,8 @@
 
             <button type="submit" class="button">Login</button>
         </form>
-            New here? <a href="newuser.html">Create an account</a>
-        <div class="login-link">
-            
-        </div>
-    </div>
+        <div class="auth-links"><a href="forgot-password.html">Forgot password?</a><br>New here? <a href="newuser.html">Create an account</a><br><a href="customer-care.html">Contact customer care</a></div>
+        </section>
+    </main>
 </body>
 </html>
